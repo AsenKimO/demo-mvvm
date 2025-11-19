@@ -9,9 +9,14 @@ import SwiftUI
 
 struct BirdListView: View {
 
+    @StateObject var viewModel = BirdListViewModel()
+
     var body: some View {
-        List(birds, id: \.self) { bird in
-            birdInfoRow(bird)
+        NavigationStack {
+            List(viewModel.birds, id: \.self) { bird in
+                birdInfoRow(bird)
+            }
+            .navigationTitle("Bird List")
         }
     }
 
@@ -37,6 +42,11 @@ struct BirdListView: View {
             Image(bird.image)
                 .resizable()
                 .frame(width: 100, height: 100)
+
+            VStack {
+                Image(systemName: "star")
+                Spacer()
+            }
         }
     }
 

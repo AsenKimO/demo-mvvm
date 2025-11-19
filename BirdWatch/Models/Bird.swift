@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Bird: Hashable {
+struct Bird: Hashable, Codable {
     let name: String
     let location: String
     let image: String
@@ -15,7 +15,7 @@ struct Bird: Hashable {
 }
 
 // Normally this would be in a ViewModel
-var birds = [
+var dummyData = [
     Bird(name: "Alden", location: "New Jersey", image: "alden", count: 2),
     Bird(name: "Antoinette", location: "New York", image: "antoinette", count: 6),
     Bird(name: "Elvis", location: "New Jersey", image: "elvis", count: 7),
