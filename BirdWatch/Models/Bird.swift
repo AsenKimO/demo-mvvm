@@ -12,6 +12,7 @@ struct Bird: Hashable {
     let location: String
     let image: String
     let count: Int
+    var isFavorited: Bool = false
 }
 
 // Normally this would be in a ViewModel

@@ -12,8 +12,18 @@ struct BirdListView: View {
     @StateObject var viewModel = BirdListViewModel()
 
     var body: some View {
-        List(viewModel.birds, id: \.self) { bird in
-            birdInfoRow(bird)
+        NavigationStack {
+            List(viewModel.birds, id: \.self) { bird in
+                birdInfoRow(bird)
+                    .contentShape(Rectangle())
+                    .onTapGesture {
+                        viewModel.toggleFavorite(bird)
+                    }
+            }
+            .navigationTitle("Bird List")
+        }
+        .onAppear {
+            viewModel.loadFavorites()
         }
     }
 
@@ -41,7 +51,7 @@ struct BirdListView: View {
                 .frame(width: 100, height: 100)
 
             VStack {
-                Image(systemName: "star")
+                Image(systemName: bird.isFavorited ? "star.fill" : "star")
                 Spacer()
             }
         }
