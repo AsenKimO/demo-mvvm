@@ -9,8 +9,10 @@ import SwiftUI
 
 struct BirdListView: View {
 
+    @StateObject var viewModel = BirdListViewModel()
+
     var body: some View {
-        List(birds, id: \.self) { bird in
+        List(viewModel.birds, id: \.self) { bird in
             birdInfoRow(bird)
         }
     }

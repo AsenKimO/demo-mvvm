@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C3862932ECE6C5A0004BB62 /* BirdListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3862922ECE6C540004BB62 /* BirdListViewModel.swift */; };
 		2E430B332B01FF5600A0DE45 /* Bird.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E430B322B01FF5600A0DE45 /* Bird.swift */; };
 		2E430B372B02036B00A0DE45 /* BirdListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E430B362B02036B00A0DE45 /* BirdListView.swift */; };
 		2ED5DDFA2B01FAB200070B8B /* BirdWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED5DDF92B01FAB200070B8B /* BirdWatchApp.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1C3862922ECE6C540004BB62 /* BirdListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirdListViewModel.swift; sourceTree = "<group>"; };
 		2E430B322B01FF5600A0DE45 /* Bird.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bird.swift; sourceTree = "<group>"; };
 		2E430B362B02036B00A0DE45 /* BirdListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirdListView.swift; sourceTree = "<group>"; };
 		2ED5DDF62B01FAB200070B8B /* BirdWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BirdWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -36,6 +38,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1C38628F2ECE6C300004BB62 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2E430B322B01FF5600A0DE45 /* Bird.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		1C3862902ECE6C390004BB62 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2ED5DDFB2B01FAB200070B8B /* ContentView.swift */,
+				2E430B362B02036B00A0DE45 /* BirdListView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		1C3862912ECE6C3E0004BB62 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				1C3862922ECE6C540004BB62 /* BirdListViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		2ED5DDED2B01FAB200070B8B = {
 			isa = PBXGroup;
 			children = (
@@ -56,9 +83,9 @@
 			isa = PBXGroup;
 			children = (
 				2ED5DDF92B01FAB200070B8B /* BirdWatchApp.swift */,
-				2E430B322B01FF5600A0DE45 /* Bird.swift */,
-				2ED5DDFB2B01FAB200070B8B /* ContentView.swift */,
-				2E430B362B02036B00A0DE45 /* BirdListView.swift */,
+				1C38628F2ECE6C300004BB62 /* Models */,
+				1C3862902ECE6C390004BB62 /* Views */,
+				1C3862912ECE6C3E0004BB62 /* ViewModels */,
 				2ED5DDFD2B01FAB400070B8B /* Assets.xcassets */,
 				2ED5DDFF2B01FAB400070B8B /* Preview Content */,
 			);
@@ -144,6 +171,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2ED5DDFC2B01FAB200070B8B /* ContentView.swift in Sources */,
+				1C3862932ECE6C5A0004BB62 /* BirdListViewModel.swift in Sources */,
 				2E430B372B02036B00A0DE45 /* BirdListView.swift in Sources */,
 				2E430B332B01FF5600A0DE45 /* Bird.swift in Sources */,
 				2ED5DDFA2B01FAB200070B8B /* BirdWatchApp.swift in Sources */,
