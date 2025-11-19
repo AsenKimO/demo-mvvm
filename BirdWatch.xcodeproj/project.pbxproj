@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1C3862932ECE6C5A0004BB62 /* BirdListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3862922ECE6C540004BB62 /* BirdListViewModel.swift */; };
+		1C38629C2ECE84650004BB62 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 1C38629B2ECE84650004BB62 /* Alamofire */; };
+		1C3862B22ECEBA9D0004BB62 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3862B12ECEBA9B0004BB62 /* NetworkManager.swift */; };
 		2E430B332B01FF5600A0DE45 /* Bird.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E430B322B01FF5600A0DE45 /* Bird.swift */; };
 		2E430B372B02036B00A0DE45 /* BirdListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E430B362B02036B00A0DE45 /* BirdListView.swift */; };
 		2ED5DDFA2B01FAB200070B8B /* BirdWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED5DDF92B01FAB200070B8B /* BirdWatchApp.swift */; };
@@ -18,6 +20,7 @@
 
 /* Begin PBXFileReference section */
 		1C3862922ECE6C540004BB62 /* BirdListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirdListViewModel.swift; sourceTree = "<group>"; };
+		1C3862B12ECEBA9B0004BB62 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		2E430B322B01FF5600A0DE45 /* Bird.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bird.swift; sourceTree = "<group>"; };
 		2E430B362B02036B00A0DE45 /* BirdListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirdListView.swift; sourceTree = "<group>"; };
 		2ED5DDF62B01FAB200070B8B /* BirdWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BirdWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -32,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C38629C2ECE84650004BB62 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +67,14 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
+		1C3862B02ECEBA960004BB62 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				1C3862B12ECEBA9B0004BB62 /* NetworkManager.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
 		2ED5DDED2B01FAB200070B8B = {
 			isa = PBXGroup;
 			children = (
@@ -86,6 +98,7 @@
 				1C38628F2ECE6C300004BB62 /* Models */,
 				1C3862902ECE6C390004BB62 /* Views */,
 				1C3862912ECE6C3E0004BB62 /* ViewModels */,
+				1C3862B02ECEBA960004BB62 /* Networking */,
 				2ED5DDFD2B01FAB400070B8B /* Assets.xcassets */,
 				2ED5DDFF2B01FAB400070B8B /* Preview Content */,
 			);
@@ -144,6 +157,9 @@
 				Base,
 			);
 			mainGroup = 2ED5DDED2B01FAB200070B8B;
+			packageReferences = (
+				1C38629A2ECE84650004BB62 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = 2ED5DDF72B01FAB200070B8B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -170,6 +186,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C3862B22ECEBA9D0004BB62 /* NetworkManager.swift in Sources */,
 				2ED5DDFC2B01FAB200070B8B /* ContentView.swift in Sources */,
 				1C3862932ECE6C5A0004BB62 /* BirdListViewModel.swift in Sources */,
 				2E430B372B02036B00A0DE45 /* BirdListView.swift in Sources */,
@@ -378,6 +395,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1C38629A2ECE84650004BB62 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.10.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1C38629B2ECE84650004BB62 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1C38629A2ECE84650004BB62 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2ED5DDEE2B01FAB200070B8B /* Project object */;
 }

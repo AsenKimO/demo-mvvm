@@ -7,11 +7,12 @@
 
 import Foundation
 
-struct Bird: Hashable {
+struct Bird: Hashable, Codable {
     let name: String
     let location: String
     let image: String
     let count: Int
+    var isFavorited: Bool = false
 }
 
 // Normally this would be in a ViewModel
