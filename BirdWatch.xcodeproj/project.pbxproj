@@ -55,10 +55,10 @@
 		2ED5DDF82B01FAB200070B8B /* BirdWatch */ = {
 			isa = PBXGroup;
 			children = (
-				2E430B322B01FF5600A0DE45 /* Bird.swift */,
-				2E430B362B02036B00A0DE45 /* BirdListView.swift */,
 				2ED5DDF92B01FAB200070B8B /* BirdWatchApp.swift */,
+				2E430B322B01FF5600A0DE45 /* Bird.swift */,
 				2ED5DDFB2B01FAB200070B8B /* ContentView.swift */,
+				2E430B362B02036B00A0DE45 /* BirdListView.swift */,
 				2ED5DDFD2B01FAB400070B8B /* Assets.xcassets */,
 				2ED5DDFF2B01FAB400070B8B /* Preview Content */,
 			);
