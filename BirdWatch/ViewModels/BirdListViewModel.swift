@@ -7,9 +7,16 @@
 
 import Foundation
 
+enum LoadingState {
+    case loaded
+    case loading
+    case error(_: Error)
+}
+
 class BirdListViewModel: ObservableObject {
 
-    @Published var birds: [Bird] = dummyData
+    @Published var birds: [Bird] = []
+    @Published var loadingState: LoadingState = .loading
 
     // MARK: - Functions
 
@@ -57,6 +64,28 @@ class BirdListViewModel: ObservableObject {
                 return birdCopy
             } else {
                 return $0
+            }
+        }
+    }
+    
+    // MARK: - Networking
+
+    func fetchBirds() {
+        self.loadingState = .loading
+        self.birds = []
+
+        NetworkManager.shared.fetchBirds { [weak self] fetchResult in
+            guard let self = self else { return }
+
+            DispatchQueue.main.async {
+                switch fetchResult {
+                case .success(let fetchedBirds):
+                    self.birds = fetchedBirds
+                    self.loadingState = .loaded
+                    self.loadFavorites()
+                case .failure(let err):
+                    self.loadingState = .error(err)
+                }
             }
         }
     }

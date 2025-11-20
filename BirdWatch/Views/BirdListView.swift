@@ -13,17 +13,51 @@ struct BirdListView: View {
 
     var body: some View {
         NavigationStack {
-            List(viewModel.birds, id: \.self) { bird in
-                birdInfoRow(bird)
-                    .contentShape(Rectangle())
-                    .onTapGesture {
-                        viewModel.toggleFavorite(bird)
+            mainView
+                .navigationTitle("Bird List")
+                .overlay {
+                    switch viewModel.loadingState {
+                    case .loaded:
+                        // render nothing
+                        EmptyView()
+                    case .loading:
+                        loadingView
+                    case .error(let error):
+                        errorView(description: error.localizedDescription)
                     }
-            }
-            .navigationTitle("Bird List")
+                }
         }
         .onAppear {
-            viewModel.loadFavorites()
+            viewModel.fetchBirds()
+        }
+    }
+
+    private var mainView: some View {
+        List(viewModel.birds, id: \.self) { bird in
+            birdInfoRow(bird)
+                .contentShape(Rectangle())
+                .onTapGesture {
+                    viewModel.toggleFavorite(bird)
+                }
+        }
+        .refreshable {
+            if case .loading = viewModel.loadingState {
+                return
+            }
+            viewModel.fetchBirds()
+        }
+    }
+
+    private var loadingView: some View {
+        ProgressView {
+            Text("Loading Birds...")
+        }
+    }
+
+    private func errorView(description: String) -> some View {
+        VStack {
+            Text("ERROR:")
+            Text(description)
         }
     }
 
