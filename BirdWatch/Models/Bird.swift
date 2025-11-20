@@ -15,10 +15,7 @@ struct Bird: Hashable, Codable {
     var isFavorited: Bool = false
     
     enum CodingKeys: String, CodingKey {
-        case name
-        case location
-        case image
-        case count
+        case name, location, image, count
         // isFavorited is intentionally excluded from CodingKeys
     }
 }

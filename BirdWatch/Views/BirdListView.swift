@@ -11,6 +11,8 @@ struct BirdListView: View {
 
     @StateObject var viewModel = BirdListViewModel()
 
+    @AppStorage("isDarkModeEnabled") private var isDarkModeEnabled: Bool = false
+
     var body: some View {
         NavigationStack {
             mainView
@@ -26,7 +28,21 @@ struct BirdListView: View {
                         errorView(description: error.localizedDescription)
                     }
                 }
+                .toolbar {
+                    ToolbarItem(placement: .topBarTrailing) {
+                        Button {
+                            isDarkModeEnabled.toggle()
+                        } label: {
+                            HStack {
+                                Image(systemName: isDarkModeEnabled ? "moon.fill" : "sun.max.fill")
+                                Text(isDarkModeEnabled ? "Dark Mode" : "Light Mode")
+                            }
+                            .padding(10)
+                        }
+                    }
+                }
         }
+        .environment(\.colorScheme, isDarkModeEnabled ? .dark : .light)
         .onAppear {
             viewModel.fetchBirds()
         }
